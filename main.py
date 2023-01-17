@@ -7,7 +7,7 @@ screen=pygame.display.set_mode([1280, 720])
 
 backgroundcolor=pygame.image.load('tlo.jpg')
 backgroundcolor=pygame.transform.scale(backgroundcolor,(1280,720))
-whitecolor=117, 169, 209
+whitecolor=25, 37, 71
 clock = pygame.time.Clock()
 white=255,255,255
 blackcolor=0,0,0
@@ -101,10 +101,10 @@ def checkAns(pop2,lista,pop):
         odp2=random.randint(0,pula)
         pula -= odp2
         odp3=pula
-        pub1=font2.render(str(poprawna)+"%",1,(0,0,0))    
-        pub2=font2.render(str(odp1)+"%",1,(0,0,0))
-        pub3=font2.render(str(odp2)+"%",1,(0,0,0))
-        pub4=font2.render(str(odp3)+"%",1,(0,0,0))
+        pub1=font2.render(str(poprawna)+"%",1,(255, 255, 255))    
+        pub2=font2.render(str(odp1)+"%",1,(255, 255, 255))
+        pub3=font2.render(str(odp2)+"%",1,(255, 255, 255))
+        pub4=font2.render(str(odp3)+"%",1,(255, 255, 255))
         if(indexpop==0):
           screen.blit(pub1, (185,385))
           screen.blit(pub2, (185,555))
@@ -145,10 +145,10 @@ def checkAns(pop2,lista,pop):
         pygame.draw.rect(screen,whitecolor,(800, 550,300,130))
         pygame.display.update()
         if i == 0 or i == 1:
-          aa=font2.render("A. "+pop,1,(0,0,0))
+          aa=font2.render("A. "+pop,1,(255, 255, 255))
           pop2='A'
           lista.remove(pop)
-          bb=font2.render("B. "+lista[i],1,(0,0,0))
+          bb=font2.render("B. "+lista[i],1,(255, 255, 255))
           screen.blit(aa, (190,412.5))
           screen.blit(bb, (190,582.5))
           pygame.display.update()
@@ -156,8 +156,8 @@ def checkAns(pop2,lista,pop):
         elif i == 2:
           temppop = pop
           lista.remove(pop)
-          aa=font2.render("A. "+lista[i],1,(0,0,0))
-          bb=font2.render("B. "+pop,1,(0,0,0))
+          aa=font2.render("A. "+lista[i],1,(255, 255, 255))
+          bb=font2.render("B. "+pop,1,(255, 255, 255))
           screen.blit(aa, (190,412.5))
           screen.blit(bb, (190,582.5))
           pop2="B"
@@ -208,9 +208,9 @@ def odpowiedzi(odp, pyt):
   pygame.draw.rect(screen,whitecolor,(590, 485,100,75))
   pygame.draw.rect(screen,whitecolor,(590, 590,100,75))
   
-  kolo1_tak=font3.render("Publiczność",1,(0,0,0))
-  kolo2_tak=font3.render("50/50",1,(0,0,0))
-  kolo3_tak=font3.render("Zmiana",1,(0,0,0))
+  kolo1_tak=font3.render("Publiczność",1,(255, 255, 255))
+  kolo2_tak=font3.render("50/50",1,(255, 255, 255))
+  kolo3_tak=font3.render("Zmiana",1,(255, 255, 255))
   kolo1_nie=font3.render("Publiczność",1,(128, 38, 0))
   kolo2_nie=font3.render("50/50",1,(128, 38, 0))
   kolo3_nie=font3.render("Zmiana",1,(128, 38, 0))
@@ -242,14 +242,14 @@ def odpowiedzi(odp, pyt):
   font2 = pygame.font.SysFont('Arial', 20, True)
   
   
-  text_render1 = font2.render(pyt, 1, (0, 0, 0))  
-  text_render2 = font2.render("A. "+lista[0], 1, (0, 0, 0))
-  text_render3 = font2.render("B. "+lista[1], 1, (0, 0, 0))
-  text_render4 = font2.render("C. "+lista[2], 1, (0, 0, 0))
-  text_render5 = font2.render("D. "+lista[3], 1, (0, 0, 0))
-  text_numer=font2.render(f'Numer pytania {q}',1,(0,0,0))
-  text_wygrananext=font2.render(f'Pytanie o {hajs[itr]} zł',1,(0,0,0))
-  text_wygrana=font2.render(f'Twoja aktualna wygrana {wygrana} zł',1,(0,0,0))    
+  text_render1 = font2.render(pyt, 1, (255, 255, 255))  
+  text_render2 = font2.render("A. "+lista[0], 1, (255, 255, 255))
+  text_render3 = font2.render("B. "+lista[1], 1, (255, 255, 255))
+  text_render4 = font2.render("C. "+lista[2], 1, (255, 255, 255))
+  text_render5 = font2.render("D. "+lista[3], 1, (255, 255, 255))
+  text_numer=font2.render(f'Numer pytania {q}',1,(255, 255, 255))
+  text_wygrananext=font2.render(f'Pytanie o {hajs[itr]} zł',1,(255, 255, 255))
+  text_wygrana=font2.render(f'Twoja aktualna wygrana {wygrana} zł',1,(255, 255, 255))    
   screen.blit(text_render1, (190,170))
   screen.blit(text_render2, (190,412.5))
   screen.blit(text_render3, (190,582.5))
@@ -363,7 +363,7 @@ def start():
   text_render = font.render(text, 1, (255, 255, 255))
   global running
   global screen
-  start=font3.render("Start",1,(0,0,0))
+  start=font3.render("Start",1,(255, 255, 255))
     
     
   rect=pygame.draw.rect(screen,whitecolor,(540, 400,200,100))
@@ -392,5 +392,3 @@ def start():
 
 pytanka('pytania.txt')        
 start()
-
-
