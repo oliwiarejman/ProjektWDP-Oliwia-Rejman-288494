@@ -34,7 +34,7 @@ q = 0
 def checkAns(pop2, lista, pop):
     hasChosen = False
     global q
-    font2 = pygame.font.SysFont('Arial', 20, True)
+    font2 = pygame.font.SysFont('Arial', 19, True)
     odpuser = None
     global running
     while running:
@@ -217,8 +217,9 @@ def odpowiedzi(odp, pyt):
     for i in range(len(lista)):
         if pop == lista[i]:
             pop2 = literyodp[i][0]
-    font2 = pygame.font.SysFont('Arial', 22, True)
-    text_render1 = font2.render(pyt, 1, (255, 255, 255))
+    font4 = pygame.font.SysFont('Arial', 22, True)
+    font2 = pygame.font.SysFont('Arial', 19, True)
+    text_render1 = font4.render(pyt, 1, (255, 255, 255))
     text_render2 = font2.render("A. "+lista[0], 1, (255, 255, 255))
     text_render3 = font2.render("B. "+lista[1], 1, (255, 255, 255))
     text_render4 = font2.render("C. "+lista[2], 1, (255, 255, 255))
@@ -262,7 +263,7 @@ def close():
 
 def gra():
     font = pygame.font.SysFont('Arial', 92, True)
-    font2 = pygame.font.SysFont('Arial', 20, True)
+    font2 = pygame.font.SysFont('Arial', 18, True)
     global running
     global itr
     global wygrana
