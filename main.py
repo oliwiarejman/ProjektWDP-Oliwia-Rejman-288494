@@ -13,7 +13,6 @@ blackcolor = 0, 0, 0
 pytania = []
 hajs = [1000000, 500000, 250000, 125000, 75000,
         40000, 20000, 10000, 5000, 2000, 1000, 500, 0]
-suma_gwarantowana = [1000, 40000]
 wygrana = 0
 suma = 0
 itr = 12
@@ -200,9 +199,9 @@ def odpowiedzi(odp, pyt):
     kolo2_nie = font3.render("50/50", 1, (128, 38, 0))
     kolo3_nie = font3.render("Zmiana", 1, (128, 38, 0))
     if kola["publicznosc"]:
-        screen.blit(kolo1_tak, (593, 410))
+        screen.blit(kolo1_tak, (600, 410))
     else:
-        screen.blit(kolo1_nie, (593, 410))
+        screen.blit(kolo1_nie, (600, 410))
     if kola["polowa"]:
         screen.blit(kolo2_tak, (619, 515))
     else:
@@ -330,11 +329,14 @@ def start():
     font = pygame.font.SysFont('Arial', 92, True)
     font2 = pygame.font.SysFont('Arial', 20, True)
     font3 = pygame.font.SysFont('Arial', 54, True)
+    font4 = pygame.font.SysFont('Arial', 92, True)
     text = 'Milionerzy'
     text_render = font.render(text, 1, (255, 255, 255))
+    text_render2 = font4.render(text, 1, (0,0,0))
     global running
     global screen
     start = font3.render("Start", 1, (255, 255, 255))
+    start2 = font3.render("Start", 1, (0,0,0))
     rect = pygame.draw.rect(screen, whitecolor, (540, 400, 200, 100))
     while running:
         for event in pygame.event.get():
@@ -345,11 +347,13 @@ def start():
         # screen.fill(backgroundcolor)
         screen.blit(backgroundcolor, [0, 0])
         pygame.draw.rect(screen, whitecolor, (540, 400, 200, 100))
-        screen.blit(text_render, (412, 200))
+        screen.blit(text_render2, (450+5, 205+5))
+        screen.blit(text_render, (450, 205))
         screen.blit(start, (578, 420))
         mx, my = pygame.mouse.get_pos()
         if 740 > mx > 540 and 500 > my > 400:
             pygame.draw.rect(screen, white, (540, 400, 200, 100))
+            screen.blit(start2, (578, 420))
             if event.type == pygame.MOUSEBUTTONDOWN:
                 gra()
                 break
